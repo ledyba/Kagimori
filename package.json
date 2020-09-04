@@ -8,7 +8,7 @@
     "watch": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Kaede Fujisaki",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
     "@types/copy-webpack-plugin": "^6.0.0",

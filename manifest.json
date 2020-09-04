@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Kagimori",
   "version": "1.0.0",
-  "description": "Adds a solid red border to all webpages matching mozilla.org.",
+  "description": "TOTP/HOTP Password Manager",
   "icons": {
     "48": "icons/1x/baseline_vpn_key_black_48dp.png",
     "96": "icons/2x/baseline_vpn_key_black_48dp.png"
