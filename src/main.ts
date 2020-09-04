@@ -17,7 +17,8 @@ function reload(keys: Map<string, Key>) {
 }
 
 function inspect() {
-
+  browser.tabs.executeScript({file: "/dist/inspect.js"})
+  .catch(reportExecuteScriptError);
 }
 
 async function setup() {
@@ -47,7 +48,7 @@ function main() {
 function reportExecuteScriptError(error: Error) {
   document.getElementById("popup-content")!.classList.add("hidden");
   document.getElementById("error-content")!.classList.remove("hidden");
-  console.error(`Failed to execute content script: ${error.message}`);
+  document.getElementById("error-string")!.innerText = error.message;
 }
 
 document.addEventListener('DOMContentLoaded', main);
