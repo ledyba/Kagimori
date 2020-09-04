@@ -11,7 +11,6 @@
     "activeTab",
     "storage"
   ],
-
   "browser_action": {
     "default_icon": "icons/2x/baseline_vpn_key_black_48dp.png",
     "default_title": "Kagimori",
