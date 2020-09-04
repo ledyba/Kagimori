@@ -1,0 +1,47 @@
+html, body {
+  width: 180px;
+}
+
+.hidden {
+  display: none;
+}
+
+/** add-button **/
+
+.add-button-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: end;
+  align-items: center;
+}
+
+#add-button {
+  cursor: pointer;
+  display: inline-block;
+  justify-content: flex-end;
+}
+
+.button {
+  margin: 3% auto;
+  padding: 4px;
+  text-align: center;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.beast:hover {
+  background-color: #CFF2F2;
+}
+
+.beast {
+  background-color: #E5F2F2;
+}
+
+.reset {
+  background-color: #FBFBC9;
+}
+
+.reset:hover {
+  background-color: #EAEA9D;
+}
