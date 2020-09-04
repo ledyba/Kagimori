@@ -1,37 +1,43 @@
 import { browser } from 'webextension-polyfill-ts'
+import Key from './Key'
+import {loadKeys, saveKeys} from './Repo'
 
-interface Key {
-  issuer: string;
-  label: string;
-  type: string;
-  digits: number;
-  algorithm: string;
-  secret: string;
-}
-
-function reload(keys: Map<string, Key>) {
+function reload(keys: Array<Key>) {
   const dom = document.getElementById('keys')! as HTMLDivElement;
   dom.innerHTML = '';
   for(const key of keys) {
   }
 }
 
-function inspect() {
-  browser.tabs.executeScript({file: "/dist/inspect.js"})
-  .catch(reportExecuteScriptError);
+async function setup() {
+  reload(await loadKeys());
 }
 
-async function setup() {
-  const sync = browser.storage.local;
-  const v = await sync.get('keys');
-  let keys: Map<string, Key> = v.keys;
-  if(keys === undefined) {
-    keys = new Map<string, Key>();
+function openConfig() {
+  const url = browser.extension.getURL('static/config.html');
+  async function handler() {
+    const tabs = await browser.tabs.query({currentWindow:true});
+    for (let i=0; i < tabs.length; i++) {
+      if (tabs[i].url === url) {
+        browser.tabs.update(tabs[i].id, {active:true});
+       return;
+      }
+    }
+    await browser.tabs.create({url:url, active:true});
   }
-  reload(keys);
+  handler().catch(reportExecuteScriptError);
+}
+
+function doInspect() {
+
 }
 
 function main() {
+  Promise.all([
+    browser.tabs.executeScript({file: "/dist/remote.js"}),
+    setup()
+  ]).catch(reportExecuteScriptError);
+
   const addButton: HTMLImageElement = document.getElementById('add-button')! as HTMLImageElement;
   addButton.addEventListener('dragstart', (ev: MouseEvent) => {
     ev.preventDefault();
@@ -39,10 +45,21 @@ function main() {
   });
   addButton.addEventListener('click', (ev: MouseEvent) => {
     ev.preventDefault();
-    inspect();
+    doInspect();
     return false;
   });
-  setup().catch(reportExecuteScriptError);
+
+  const configButton: HTMLImageElement = document.getElementById('config-button')! as HTMLImageElement;
+  configButton.addEventListener('dragstart', (ev: MouseEvent) => {
+    ev.preventDefault();
+    return false;
+  });
+  configButton.addEventListener('click', (ev: MouseEvent) => {
+    ev.preventDefault();
+    openConfig();
+    return false;
+  });
+
 }
 
 function reportExecuteScriptError(error: Error) {

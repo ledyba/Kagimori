@@ -6,8 +6,9 @@ const config: ConfigurationFactory = () => {
   return {
     mode: 'production',
     entry: {
-      main:    path.join(__dirname, 'src', 'main.ts'),
-      inspect: path.join(__dirname, 'src', 'inspect.ts')
+      main:   path.join(__dirname, 'src', 'main.ts'),
+      remote: path.join(__dirname, 'src', 'remote.ts'),
+      config: path.join(__dirname, 'src', 'config.ts'),
     },
     output: {
       path: path.join(__dirname, 'dist'),
