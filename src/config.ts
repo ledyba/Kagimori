@@ -28,7 +28,6 @@ function showKeyList(newKeys: Key[]) {
   keyList.innerHTML = '';
   keys = newKeys;
   for(let key of keys) {
-    console.log(key);
     const el = document.createElement('div');
     el.classList.add('key-item');
     {

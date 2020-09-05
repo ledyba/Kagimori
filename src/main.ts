@@ -1,11 +1,38 @@
-import { browser } from 'webextension-polyfill-ts'
+import {browser} from 'webextension-polyfill-ts'
 import Key from './Key'
-import {loadKeys, saveKeys} from './Repo'
+import {loadKeys} from './Repo'
 
 function reload(keys: Array<Key>) {
-  const dom = document.getElementById('keys')! as HTMLDivElement;
-  dom.innerHTML = '';
+  const keyList = document.getElementById('keys')! as HTMLDivElement;
+  keyList.innerHTML = '';
   for(const key of keys) {
+    const el = document.createElement('div');
+    el.classList.add('key-item');
+    {
+      const icon = document.createElement('img');
+      icon.classList.add('key-icon');
+      icon.src = './vpn_key-black-48dp.svg';
+      icon.setAttribute('draggable', 'false');
+      el.appendChild(icon);
+    }
+    {
+      const container = document.createElement('div');
+      container.classList.add('key-info');
+      {
+        const child = document.createElement('div');
+        child.classList.add('issuer');
+        child.innerText = key.issuer;
+        container.appendChild(child);
+      }
+      {
+        const child = document.createElement('div');
+        child.classList.add('issuer');
+        child.innerText = key.label;
+        container.appendChild(child);
+      }
+      el.appendChild(container);
+    }
+    keyList.appendChild(el);
   }
 }
 
@@ -28,13 +55,12 @@ function openConfig() {
   handler().catch(reportExecuteScriptError);
 }
 
-function doInspect() {
-
+async function doInspect() {
+  await browser.tabs.executeScript({file: "/dist/remote.js"});
 }
 
 function main() {
   Promise.all([
-    browser.tabs.executeScript({file: "/dist/remote.js"}),
     setup()
   ]).catch(reportExecuteScriptError);
 
@@ -42,7 +68,7 @@ function main() {
   addButton.setAttribute('draggable', 'false');
   addButton.addEventListener('click', (ev: MouseEvent) => {
     ev.preventDefault();
-    doInspect();
+    doInspect().catch(reportExecuteScriptError);
     return false;
   });
 

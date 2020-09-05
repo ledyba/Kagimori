@@ -1,5 +1,5 @@
 html, body {
-  width: 180px;
+  width: min-content;
 }
 
 .hidden {
@@ -33,4 +33,37 @@ html, body {
   padding: 4px;
   font-size: 1.5em;
   cursor: pointer;
+}
+
+/** key-button **/
+
+.key-item {
+  border-radius: 3px;
+  border: solid 1px #bbb;
+  margin: 1em;
+  padding: 4px;
+
+  display: flex;
+  flex-direction: row;
+
+  color: black;
+  background-color: white;
+
+  cursor: pointer;
+}
+
+.key-item:hover {
+  color: white;
+  background-color: darkgray;
+}
+
+.key-info {
+  font-weight: bold;
+  flex-grow: 1;
+  margin-left: 1em;
+}
+
+.key-icon {
+  height: 100%;
+  display: block;
 }
