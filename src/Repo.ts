@@ -1,5 +1,5 @@
 import { browser } from 'webextension-polyfill-ts'
-import Key from './Key'
+import {Key} from './Key'
 
 const storage =  browser.storage.local;
 

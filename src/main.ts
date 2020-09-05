@@ -1,11 +1,13 @@
 import {browser} from 'webextension-polyfill-ts'
-import Key from './Key'
+import {Key, generateKey} from './Key'
 import {loadKeys} from './Repo'
 
 function reload(keys: Array<Key>) {
   const keyList = document.getElementById('keys')! as HTMLDivElement;
   keyList.innerHTML = '';
   for(const key of keys) {
+    const wrapper = document.createElement('div');
+    wrapper.classList.add('keys-wrapper');
     const el = document.createElement('div');
     el.classList.add('key-item');
     {
@@ -31,8 +33,33 @@ function reload(keys: Array<Key>) {
         container.appendChild(child);
       }
       el.appendChild(container);
+      el.addEventListener('click', () => {
+        (async () => {
+          const p = generateKey(key);
+          const cover = document.createElement('div');
+          cover.classList.add('key-cover');
+          const iconElem = document.createElement('img');
+          iconElem.src = './done-black-48dp.svg';
+          iconElem.style.width = '2em';
+          iconElem.style.height = '2em';
+          cover.appendChild(iconElem);
+          const keyElem = document.createElement('span');
+          keyElem.innerText = p;
+          cover.appendChild(keyElem);
+          cover.style.transition = 'opacity 3000ms ease-in';
+          window.setTimeout(() => {
+            wrapper.removeChild(cover);
+          }, 3000);
+          window.requestAnimationFrame(() => {
+            cover.style.opacity = '0';
+          });
+          navigator.clipboard.writeText(p).catch(reportExecuteScriptError);
+          wrapper.appendChild(cover);
+        })().catch(reportExecuteScriptError);
+      });
     }
-    keyList.appendChild(el);
+    wrapper.appendChild(el);
+    keyList.appendChild(wrapper);
   }
 }
 

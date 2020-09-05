@@ -37,6 +37,10 @@ html, body {
 
 /** key-button **/
 
+.keys-wrapper {
+  position: relative;
+}
+
 .key-item {
   border-radius: 3px;
   border: solid 1px #bbb;
@@ -66,4 +70,22 @@ html, body {
 .key-icon {
   height: 100%;
   display: block;
+}
+
+.key-cover {
+  position: absolute;
+  left: 1em;
+  right: 1em;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  background-color: rgba(185, 255, 183, 1);
+  box-sizing: border-box;
+  justify-content: center;
+  text-align: center;
+}
+
+.key-cover > span {
+  font-weight: bold;
+  font-size: 200%;
 }

@@ -10,7 +10,8 @@
   "permissions": [
     "activeTab",
     "storage",
-    "downloads"
+    "downloads",
+    "clipboardWrite"
   ],
   "browser_action": {
     "default_icon": "icons/2x/baseline_vpn_key_black_48dp.png",

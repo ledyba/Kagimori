@@ -12,6 +12,7 @@
   "license": "GPL-3.0-or-later",
   "devDependencies": {
     "@types/copy-webpack-plugin": "^6.0.0",
+    "@types/crypto-js": "^3.1.47",
     "@types/webpack": "^4.41.22",
     "copy-webpack-plugin": "^6.1.0",
     "ts-loader": "^8.0.3",
@@ -21,5 +22,8 @@
     "webextension-polyfill-ts": "^0.19.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "crypto-js": "^4.0.0"
   }
 }
