@@ -36,6 +36,34 @@
   margin-right: auto;
 }
 
+#key-list {
+  margin-left: auto;
+  margin-right: auto;
+  width: min-content;
+}
+
+.key-item {
+  border-radius: 3px;
+  border: solid 1px #bbb;
+  margin: 1em;
+  padding: 4px;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.key-info {
+  font-weight: bold;
+  flex-grow: 1;
+}
+
+.key-remove {
+  height: 100%;
+  display: block;
+  cursor: pointer;
+}
+
+
 .title {
   text-align: center;
 }

@@ -39,10 +39,7 @@ function main() {
   ]).catch(reportExecuteScriptError);
 
   const addButton: HTMLImageElement = document.getElementById('add-button')! as HTMLImageElement;
-  addButton.addEventListener('dragstart', (ev: MouseEvent) => {
-    ev.preventDefault();
-    return false;
-  });
+  addButton.setAttribute('draggable', 'false');
   addButton.addEventListener('click', (ev: MouseEvent) => {
     ev.preventDefault();
     doInspect();
@@ -50,10 +47,7 @@ function main() {
   });
 
   const configButton: HTMLImageElement = document.getElementById('config-button')! as HTMLImageElement;
-  configButton.addEventListener('dragstart', (ev: MouseEvent) => {
-    ev.preventDefault();
-    return false;
-  });
+  configButton.setAttribute('draggable', 'false');
   configButton.addEventListener('click', (ev: MouseEvent) => {
     ev.preventDefault();
     openConfig();
