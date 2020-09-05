@@ -18,6 +18,7 @@ function showMessage(message: string, success: boolean) {
 
 	messgeTimeout = setTimeout(function() {
     messageBox.className = '';
+    messgeTimeout = null;
 	}, 3 * 1000);
 }
 
