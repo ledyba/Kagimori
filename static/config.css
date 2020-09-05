@@ -2,6 +2,53 @@
   display: none;
 }
 
+#message-box {
+  margin: 1em auto;
+  width: 90%;
+  color: white;
+  font-weight: bold;
+  border-radius: 3px;
+  line-height: 30px;
+  font-size: 16px;
+  max-height: 0;
+  text-align: center;
+  overflow: hidden;
+  transition: all 0.5s ease-out;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#message-box.visible {
+  /* https://ofsilvers.hateblo.jp/entry/auto-height-transition-not-working */
+  max-height: 100em;
+}
+
+#message-box.success {
+  background-color: green;
+}
+
+#message-box.error {
+  background-color: rgb(208,52,37);;
+}
+
+#content {
+  width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  text-align: center;
+}
+
+.title > .main {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.title img {
+  max-height: 1em;
+}
+
 /** add-button **/
 
 .buttons-wrapper {
@@ -37,6 +84,7 @@
   text-decoration: none;
   border-radius: 3px;
   font-weight: bold;
+  user-select: none;
 }
 
 .button:hover {
@@ -44,6 +92,6 @@
   background-color: darkgray;
 }
 
-.button > img{
+.button > img {
   max-height: 1em;
 }
