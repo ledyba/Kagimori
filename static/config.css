@@ -22,16 +22,26 @@
   display: inline-block;
 }
 
+#import-input {
+  display: none;
+}
+
 .button {
   margin: 2px;
   padding: 4px;
   font-size: 1.5em;
+  border: solid 1px #bbb;
   cursor: pointer;
-  background-color: #E5F2F2;
+  color: gray;
+  background-color: white;
+  text-decoration: none;
+  border-radius: 3px;
+  font-weight: bold;
 }
 
 .button:hover {
-  background-color: #CFF2F2;
+  color: white;
+  background-color: darkgray;
 }
 
 .button > img{

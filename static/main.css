@@ -22,13 +22,7 @@ html, body {
   justify-content: flex-end;
 }
 
-#export-button {
-  cursor: pointer;
-  display: inline-block;
-  justify-content: flex-end;
-}
-
-#import-button {
+#config-button {
   cursor: pointer;
   display: inline-block;
   justify-content: flex-end;

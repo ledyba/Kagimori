@@ -8,9 +8,10 @@
 
 <body>
   <div class="buttons-wrapper">
-    <div class="button" id="import-button"><img src="archive-black-48dp.svg">Import</div>
-    <div class="button" id="export-button"><img src="unarchive-black-48dp.svg">Export</div>
-    <div class="button" id="clear-button"><img src="clear_all-black-48dp.svg">Clear All</div>
+    <label class="button" id="import-button" for="import-input"><img src="archive-black-48dp.svg">Import</label>
+    <input type="file" id="import-input" accept=".rjson,.json,.txt">
+    <label class="button" id="export-button"><img src="unarchive-black-48dp.svg">Export</label>
+    <label class="button" id="clear-button"><img src="clear_all-black-48dp.svg">Clear All</label>
   </div>
   <script src="../dist/config.js"></script>
 </body>
