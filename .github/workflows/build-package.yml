@@ -20,9 +20,9 @@ jobs:
       run: npm run build-production
     - name: Make package
       run: |
-        7z a kagimori.zip 
+        7z a kagimori.zip dist/ icons/ static/ manifest.json
     - name: Upload
       uses: actions/upload-artifact@v2
       with:
         name: kagimori.zip
-        path: dist/ icons/ static/ manifest.json
+        path: kagimori.zip
