@@ -8,6 +8,7 @@
     "watch": "webpack --watch",
     "build-production": "webpack --config webpack.production.ts",
     "build-development": "webpack --config webpack.development.ts",
+    "up": "npm-check-updates --upgrade && npm install && npm audit fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Kaede Fujisaki",
@@ -15,6 +16,7 @@
   "devDependencies": {
     "@types/crypto-js": "^3.1.47",
     "@types/webpack": "^4.41.22",
+    "npm-check-updates": "^8.1.0",
     "ts-loader": "^8.0.3",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.2",
