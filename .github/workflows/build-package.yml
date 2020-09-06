@@ -64,7 +64,7 @@ jobs:
           path: kagimori
       - name: Create a zip
         shell: bash
-        run: cd kagimori && 7za a kagimori.zip * -r
+        run: cd kagimori && 7za a -tzip -r ../kagimori.zip ./*
       - name: Upload release asset
         uses: actions/upload-release-asset@v1.0.2
         env:
