@@ -5,9 +5,9 @@
 ## Features
 
  - Generate TOTP from your browser.
- - Add new key from QR code image.
+ - Add new keys from QR code images.
  - Import/Export keys.
- - Sync keys across devices.
+ - Sync keys across devices!
 
 ## Screenshots
 
@@ -17,7 +17,7 @@
 
 ![.github/img3.png](.github/img3.png)
 
-## Downlaod
+## Downlaod from store
 
 In progres....
 
