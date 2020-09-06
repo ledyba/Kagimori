@@ -1,3 +1,13 @@
+a {
+  color: gray;
+}
+a:visited {
+  color: gray;
+}
+a:hover {
+  color: black;
+}
+
 .hidden {
   display: none;
 }
@@ -86,6 +96,15 @@
   align-items: center;
 }
 
+#add-button {
+  cursor: pointer;
+  display: inline-block;
+}
+
+#add-input {
+  display: none;
+}
+
 #export-button {
   cursor: pointer;
   display: inline-block;
@@ -121,4 +140,10 @@
 
 .button > img {
   max-height: 1em;
+}
+
+/** copyright **/
+
+.copyright {
+  text-align: center;
 }

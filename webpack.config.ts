@@ -7,7 +7,6 @@ const config: ConfigurationFactory = () => {
     mode: 'none',
     entry: {
       main:   path.join(__dirname, 'src', 'main.ts'),
-      remote: path.join(__dirname, 'src', 'remote.ts'),
       config: path.join(__dirname, 'src', 'config.ts'),
     },
     output: {

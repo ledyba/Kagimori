@@ -16,23 +16,35 @@ html, body {
   align-items: center;
 }
 
-#add-button {
-  cursor: pointer;
-  display: inline-block;
-  justify-content: flex-end;
-}
-
 #config-button {
   cursor: pointer;
   display: inline-block;
   justify-content: flex-end;
+  text-align: center;
+  vertical-align: center;
+}
+
+#config-button > img {
+  max-height: 1em;
 }
 
 .button {
-  margin: 3% auto;
+  margin: 2px;
   padding: 4px;
   font-size: 1.5em;
+  border: solid 1px #bbb;
   cursor: pointer;
+  color: gray;
+  background-color: white;
+  text-decoration: none;
+  border-radius: 3px;
+  font-weight: bold;
+  user-select: none;
+}
+
+.button:hover {
+  color: white;
+  background-color: darkgray;
 }
 
 /** key-button **/

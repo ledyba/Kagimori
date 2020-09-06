@@ -14,13 +14,18 @@
     </div>
     <hr>
     <div class="buttons-wrapper">
+      <input type="file" id="add-input" accept=".jpg,.jpeg,.png,.gif,.webp,.heif,.heic,.avif">
+      <label class="button" id="add-button" for="add-input"><img src="qr_code_scanner-black-48dp.svg">&nbsp;Add Key</label>
       <input type="file" id="import-input" accept=".rjson,.json,.txt">
-      <label class="button" id="import-button" for="import-input"><img src="archive-black-48dp.svg">Import</label>
-      <label class="button" id="export-button"><img src="unarchive-black-48dp.svg">Export</label>
-      <label class="button" id="clear-button"><img src="clear_all-black-48dp.svg">Clear All</label>
+      <label class="button" id="import-button" for="import-input"><img src="archive-black-48dp.svg">&nbsp;Import</label>
+      <label class="button" id="export-button"><img src="unarchive-black-48dp.svg"&nbsp;>Export</label>
+      <label class="button" id="clear-button"><img src="clear_all-black-48dp.svg">&nbsp;Clear All</label>
     </div>
     <div id="message-box"></div>
-    <div id="key-list">
+    <div id="key-list"></div>
+    <hr>
+    <div class="copyright">
+      by Kaede Fujisaki, since 2020. / Fork me on <a href="https://github.com/ledyba/Kagimori">Github</a>!
     </div>
   </div>
   <script src="../dist/config.js"></script>

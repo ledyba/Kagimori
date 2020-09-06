@@ -82,22 +82,10 @@ function openConfig() {
   handler().catch(reportExecuteScriptError);
 }
 
-async function doInspect() {
-  await browser.tabs.executeScript({file: "/dist/remote.js"});
-}
-
 function main() {
   Promise.all([
     setup()
   ]).catch(reportExecuteScriptError);
-
-  const addButton: HTMLImageElement = document.getElementById('add-button')! as HTMLImageElement;
-  addButton.setAttribute('draggable', 'false');
-  addButton.addEventListener('click', (ev: MouseEvent) => {
-    ev.preventDefault();
-    doInspect().catch(reportExecuteScriptError);
-    return false;
-  });
 
   const configButton: HTMLImageElement = document.getElementById('config-button')! as HTMLImageElement;
   configButton.setAttribute('draggable', 'false');
