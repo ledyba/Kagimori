@@ -4,7 +4,7 @@ import CopyWebpackPlugin from 'copy-webpack-plugin'
 
 const config: ConfigurationFactory = () => {
   return {
-    mode: 'production',
+    mode: 'none',
     entry: {
       main:   path.join(__dirname, 'src', 'main.ts'),
       remote: path.join(__dirname, 'src', 'remote.ts'),
