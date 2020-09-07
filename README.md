@@ -23,6 +23,16 @@
 
 In progres....
 
+## Acknoledgement
+
+### extension icon
+
+From [https://www.hiclipart.com/free-transparent-background-png-clipart-ddehg](hiclipart).
+
+### other icons
+
+From [Icons - Material Design](https://material.io/resources/icons/).
+
 # License
 
 GPLv3 or later.

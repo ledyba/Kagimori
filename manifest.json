@@ -1,11 +1,11 @@
 {
   "manifest_version": 2,
   "name": "Kagimori",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "TOTP/HOTP Password Manager",
   "icons": {
-    "48": "icons/1x/baseline_vpn_key_black_48dp.png",
-    "96": "icons/2x/baseline_vpn_key_black_48dp.png"
+    "48": "icons/48/padlock.png",
+    "96": "icons/96/padlock.png"
   },
   "permissions": [
     "activeTab",
