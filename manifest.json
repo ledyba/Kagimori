@@ -4,8 +4,8 @@
   "version": "1.0.2",
   "description": "TOTP/HOTP Password Manager",
   "icons": {
-    "48": "icons/48/padlock.png",
-    "96": "icons/96/padlock.png"
+    "48": "icons/padlock-48.png",
+    "96": "icons/padlock-96.png"
   },
   "permissions": [
     "activeTab",
@@ -14,7 +14,7 @@
     "clipboardWrite"
   ],
   "browser_action": {
-    "default_icon": "icons/2x/baseline_vpn_key_black_48dp.png",
+    "default_icon": "icons/padlock.png",
     "default_title": "Kagimori",
     "default_popup": "static/main.html"
   }
