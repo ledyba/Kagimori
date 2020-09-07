@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "build": "webpack",
-    "watch": "webpack --watch",
+    "watch": "webpack --watch --config webpack.development.ts",
     "build-production": "webpack --config webpack.production.ts",
     "build-development": "webpack --config webpack.development.ts",
     "up": "npm-check-updates --upgrade && npm install && npm audit fix",
