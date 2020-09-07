@@ -131,6 +131,7 @@ a:hover {
   border-radius: 3px;
   font-weight: bold;
   user-select: none;
+  white-space: nowrap;
 }
 
 .button:hover {
