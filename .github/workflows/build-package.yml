@@ -72,5 +72,5 @@ jobs:
         with:
           upload_url: ${{ needs.release.outputs.upload_url }}
           asset_path: kagimori.zip
-          asset_name: kagimori.zip
+          asset_name: kagimori-${{ github.ref }}.zip
           asset_content_type: application/zip
