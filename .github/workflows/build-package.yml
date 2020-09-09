@@ -24,8 +24,6 @@ jobs:
       uses: actions/setup-node@v1
     - name: Install package
       run: npm ci
-    - name: Build webpack
-      run: npm run build-production
     - name: Create a package
       run: npm run create-package
     - name: Upload
