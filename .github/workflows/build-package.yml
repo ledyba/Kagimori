@@ -67,13 +67,13 @@ jobs:
       - name: Grab filename
         run: |
           ::set-output name=path::$(find kagimori/ -mindepth 1 -maxdepth 1 -type f -name '*.zip')
-        id: output
+        id: get_filename
       - name: Upload release asset
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ needs.release.outputs.upload_url }}
-          asset_path: ${{ jobs.steps.output.path }}
-          asset_name: ${{ jobs.steps.output.path }}
+          asset_path: ${{ steps.get_filename.outputs.path }}
+          asset_name: ${{ steps.get_filename.outputs.path }}
           asset_content_type: application/zip
