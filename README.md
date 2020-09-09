@@ -27,7 +27,7 @@
 
 ```bash
 git clone git@github.com:ledyba/Kagimori.git && cd Kagimori
-npm install
+npm ci
 npm run build-production
 ```
 
