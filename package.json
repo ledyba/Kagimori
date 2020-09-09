@@ -8,6 +8,7 @@
     "watch": "webpack --watch --config webpack.development.ts",
     "build-production": "webpack --config webpack.production.ts",
     "build-development": "webpack --config webpack.development.ts",
+    "create-package": "npm run build-development && zip -r kagimori.zip dist icons static manifest.json",
     "up": "npm-check-updates --upgrade && npm install && npm audit fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
