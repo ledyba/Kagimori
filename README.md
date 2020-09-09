@@ -31,7 +31,7 @@ npm ci
 npm run build-production
 ```
 
-## Acknoledgement
+## Acknowledgements
 
 ### extension icon
 
