@@ -64,7 +64,7 @@ jobs:
           path: kagimori
       - name: Grab filename
         run: |
-          ::set-output name=path::$(find kagimori/ -mindepth 1 -maxdepth 1 -type f -name '*.zip')
+          echo "::set-output name=path::$(find kagimori/ -mindepth 1 -maxdepth 1 -type f -name '*.zip')"
         id: get_filename
       - name: Upload release asset
         uses: actions/upload-release-asset@v1.0.2
