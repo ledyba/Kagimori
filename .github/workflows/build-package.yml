@@ -28,8 +28,6 @@ jobs:
       run: npm run build-production
     - name: Create a package
       run: npm run create-package
-    - name: Rename package via git-rev
-      run: mv 'kagimori.zip' "kagimori-$(git describe --tags).zip"
     - name: Upload
       uses: actions/upload-artifact@v2
       with:
