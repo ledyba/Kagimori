@@ -23,6 +23,14 @@
 
 In progres....
 
+# How to build?
+
+```bash
+git clone git@github.com:ledyba/Kagimori.git && cd Kagimori
+npm install
+npm run build-production
+```
+
 ## Acknoledgement
 
 ### extension icon
