@@ -21,7 +21,7 @@
 
 ## Downlaod from store
 
-In progres....
+ - [Kagimori – 🦊 Firefox](https://addons.mozilla.org/ja/firefox/addon/kagimori/)
 
 # How to build?
 
