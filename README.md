@@ -35,7 +35,7 @@ npm run build-production
 
 ### extension icon
 
-From [https://www.hiclipart.com/free-transparent-background-png-clipart-ddehg](hiclipart).
+From [hiclipart](https://www.hiclipart.com/free-transparent-background-png-clipart-ddehg).
 
 ### other icons
 
