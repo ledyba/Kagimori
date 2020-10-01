@@ -4,7 +4,7 @@
   "description": "TOTP/HOTP Password Manager",
   "main": "main.js",
   "scripts": {
-    "build": "webpack",
+    "build": "npm run build-development",
     "watch": "webpack --watch --config webpack.development.ts",
     "build-production": "webpack --config webpack.production.ts",
     "build-development": "webpack --config webpack.development.ts",

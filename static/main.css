@@ -1,5 +1,6 @@
 html, body {
   width: min-content;
+  box-sizing: border-box;
 }
 
 .hidden {
