@@ -17,17 +17,24 @@ function createArrayBuffer(buff: ArrayBuffer): WordArray {
   return CryptoJS.lib.WordArray.create(buff as any as number[]);
 }
 
+function createUint8Array(base64str: string): Uint8Array {
+  const buffStr = window.atob(base64str);
+  const bytes = new Uint8Array(buffStr.length);
+  for (let i = 0; i < buffStr.length; i++) {
+    bytes[i] = buffStr.charCodeAt(i);
+  }
+  return bytes;
+}
+
 function sha1(buff: ArrayBuffer): Uint8Array {
   const input = createArrayBuffer(buff);
   const digest = CryptoJS.SHA1(input);
-  const output = digest.toString(CryptoJS.enc.Base64);
-  return Buffer.from(output, 'base64');
+  return createUint8Array(digest.toString(CryptoJS.enc.Base64));
 }
 
 function hmac(key: ArrayBuffer, text: ArrayBuffer): Uint8Array {
   const digest = CryptoJS.HmacSHA1(createArrayBuffer(key), createArrayBuffer(text));
-  const output = digest.toString(CryptoJS.enc.Base64);
-  return Buffer.from(output, 'base64');
+  return createUint8Array(digest.toString(CryptoJS.enc.Base64));
 }
 
 function hotp(key: Key, counter: number): string {
