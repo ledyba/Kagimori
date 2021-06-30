@@ -1,4 +1,5 @@
 import CryptoJS from 'crypto-js'
+import WordArray from 'crypto-js/lib-typedarrays'
 import { base32Decode } from '@ctrl/ts-base32';
 
 export interface Key {
@@ -11,17 +12,22 @@ export interface Key {
   secret: string;
 }
 
+function createArrayBuffer(buff: ArrayBuffer): WordArray {
+  // FIXME: safe: It's okay to pass ArrayBuffer
+  return CryptoJS.lib.WordArray.create(buff as any as number[]);
+}
+
 function sha1(buff: ArrayBuffer): Uint8Array {
-  const input = CryptoJS.lib.WordArray.create(buff);
+  const input = createArrayBuffer(buff);
   const digest = CryptoJS.SHA1(input);
   const output = digest.toString(CryptoJS.enc.Base64);
-  return new Buffer(output, 'base64');
+  return Buffer.from(output, 'base64');
 }
 
 function hmac(key: ArrayBuffer, text: ArrayBuffer): Uint8Array {
-  const digest = CryptoJS.HmacSHA1(CryptoJS.lib.WordArray.create(key), CryptoJS.lib.WordArray.create(text));
+  const digest = CryptoJS.HmacSHA1(createArrayBuffer(key), createArrayBuffer(text));
   const output = digest.toString(CryptoJS.enc.Base64);
-  return new Buffer(output, 'base64');
+  return Buffer.from(output, 'base64');
 }
 
 function hotp(key: Key, counter: number): string {
@@ -67,7 +73,7 @@ function hotp(key: Key, counter: number): string {
                | ((digest[offset + 2] & 255) << 8)
                | ((digest[offset + 3] & 255) << 0))
                % (10 ** key.digits);
-    const token = (Array(key.digits).join('0') + otp).slice(-key.digits);
+    const token = (new Array(key.digits).fill('0').join('') + otp).slice(-key.digits);
     return token;
   }
 
