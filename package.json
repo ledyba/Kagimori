@@ -10,7 +10,7 @@
     "build-development": "webpack --config webpack.development.ts",
     "create-package": "npm run build-production && zip -r \"kagimori-$(git describe --tags).zip\" dist icons static manifest.json LICENSE README.md",
     "up": "npm-check-updates --upgrade && npm install && npm audit fix",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Kaede Fujisaki",
   "license": "GPL-3.0-or-later",
