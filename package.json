@@ -8,7 +8,8 @@
     "watch": "webpack --watch --config webpack.development.ts",
     "build-production": "webpack --config webpack.production.ts",
     "build-development": "webpack --config webpack.development.ts",
-    "create-package": "npm run build-production && zip -r \"kagimori-$(git describe --tags).zip\" dist icons static manifest.json LICENSE README.md",
+    "pack": "npm run build-production && 7za a \"kagimori-$(git describe --tags).zip\" dist icons static manifest.json LICENSE README.md",
+    "pack-src": "7za a \"kagimori-$(git describe --tags).src.zip\" . -x!dist -x!node_modules -x!*.zip",
     "up": "npm-check-updates --upgrade && npm install && npm audit fix",
     "test": "jest"
   },
