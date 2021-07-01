@@ -1,6 +1,6 @@
 # Kagimori
 
-[![Run unit tests](https://github.com/ledyba/Kagimori/actions/workflows/run-unit-tests.yml/badge.svg)](https://github.com/ledyba/Kagimori/actions/workflows/run-unit-tests.yml) [![Build package](https://github.com/ledyba/Kagimori/workflows/Build%20package/badge.svg)](https://github.com/ledyba/Kagimori/actions?query=workflow%3A%22Build+package%22)
+[![Build package](https://github.com/ledyba/Kagimori/workflows/Build%20package/badge.svg)](https://github.com/ledyba/Kagimori/actions?query=workflow%3A%22Build+package%22)
 
 **Kagimori** is a browser extension to manage TOTP(Time-based One Time Password) keys. You can use this extension as an alternative to smartphone apps.
 
