@@ -13,7 +13,7 @@ function reload(keys: Array<Key>) {
     {
       const icon = document.createElement('img');
       icon.classList.add('key-icon');
-      icon.src = './vpn_key-black-48dp.svg';
+      icon.src = './lock_open_black_48dp.svg';
       icon.setAttribute('draggable', 'false');
       el.appendChild(icon);
     }
