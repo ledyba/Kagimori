@@ -85,7 +85,8 @@ function doImport(event: Event) {
     try {
       data = JSON.parse(result as string);
     } catch(e) {
-      showMessage('Failed to parse JSON data, invalid JSON:<br>' + (e.message||'???'), false);
+      const err = e as Error;
+      showMessage('Failed to parse JSON data, invalid JSON:<br>' + (err.message||'???'), false);
       return;
     }
     async function handler() {
@@ -106,7 +107,8 @@ function doImport(event: Event) {
   try {
     reader.readAsText(file[0], 'utf-8');
   } catch(e) {
-    showMessage('Failed to import file:<br>' + (e.message||'???'), false);
+    const err = e as Error;
+    showMessage('Failed to import file:<br>' + (err.message||'???'), false);
   }
 }
 
@@ -240,7 +242,8 @@ function doAnalyze(event: Event) {
   try {
     reader.readAsDataURL(file[0]);
   } catch(e) {
-    showMessage('Failed to read import file:<br>' + (e.message||'???'), false);
+    const err = e as Error;
+    showMessage('Failed to read import file:<br>' + (err.message||'???'), false);
   }
 }
 
