@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Kagimori",
   "version": "1.0.6",
   "description": "TOTP/HOTP Password Manager",
@@ -13,7 +13,7 @@
     "downloads",
     "clipboardWrite"
   ],
-  "browser_action": {
+  "action": {
     "default_icon": "icons/padlock.png",
     "default_title": "Kagimori",
     "default_popup": "static/main.html"
