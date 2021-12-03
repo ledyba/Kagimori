@@ -6,10 +6,10 @@
 
 ## Features
 
- - Generate TOTP from your browser.
- - Add new keys from QR code images.
- - Import/Export keys.
- - Sync keys across devices!
+- Generate TOTP from your browser.
+- Add new keys from QR code images.
+- Import/Export keys.
+- Sync keys across devices!
 
 ## Screenshots
 
@@ -21,7 +21,7 @@
 
 ## Downlaod from store
 
- - [Kagimori – 🦊 Firefox](https://addons.mozilla.org/ja/firefox/addon/kagimori/)
+- [Kagimori – 🦊 Firefox](https://addons.mozilla.org/ja/firefox/addon/kagimori/)
 
 # How to build?
 
