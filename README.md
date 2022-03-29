@@ -43,4 +43,4 @@ From [Icons - Material Design](https://material.io/resources/icons/).
 
 # License
 
-GPLv3 or later.
+AGPLv3 or later.
