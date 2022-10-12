@@ -1,6 +1,6 @@
 {
   "name": "kagimori",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "TOTP/HOTP Password Manager",
   "main": "main.js",
   "scripts": {
