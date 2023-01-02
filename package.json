@@ -4,12 +4,11 @@
   "description": "TOTP/HOTP Password Manager",
   "main": "main.js",
   "scripts": {
-    "build": "npm run build-development",
+    "build": "npm run build-dev",
     "watch": "webpack --watch --config webpack.development.ts",
-    "build-production": "webpack --config webpack.production.ts",
-    "build-development": "webpack --config webpack.development.ts",
-    "pack": "npm run build-production && 7z a \"kagimori-$(git describe --tags).zip\" dist icons static manifest.json LICENSE README.md",
-    "pack-src": "7z a \"kagimori-$(git describe --tags).src.zip\" . -x!dist -x!node_modules -x!*.zip",
+    "build-produ": "webpack --config webpack.production.ts",
+    "build-dev": "webpack --config webpack.development.ts",
+    "release": "bash scripts/release.sh",
     "up": "npm-check-updates --upgrade && npm install && npm audit fix",
     "test": "jest"
   },
