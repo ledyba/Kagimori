@@ -25,7 +25,7 @@ jobs:
     - name: Install package
       run: npm ci
     - name: Create a package
-      run: npm run 
+      run: npm run release
     - name: Upload
       uses: actions/upload-artifact@v2
       with:
