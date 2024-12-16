@@ -1,6 +1,6 @@
 {
   "name": "kagimori",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "TOTP/HOTP Password Manager",
   "main": "main.js",
   "scripts": {
@@ -17,13 +17,13 @@
   "devDependencies": {
     "@types/crypto-js": "^4.2.2",
     "@types/webpack": "^5.28.5",
-    "npm-check-updates": "^17.1.3",
+    "npm-check-updates": "^17.1.11",
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.6.2",
+    "typescript": "^5.7.2",
     "web-ext": "^8.3.0",
-    "webextension-polyfill-ts": "^0.25.0",
-    "webpack": "^5.94.0",
+    "webextension-polyfill-ts": "^0.26.0",
+    "webpack": "^5.97.1",
     "webpack-cli": "^5.1.4",
     "webpack-merge": "^6.0.1"
   },

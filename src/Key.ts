@@ -12,9 +12,8 @@ export interface Key {
   secret: string;
 }
 
-function createArrayBuffer(buff: ArrayBuffer): WordArray {
-  // FIXME: safe: It's okay to pass ArrayBuffer
-  return CryptoJS.lib.WordArray.create(buff as any as number[]);
+function createWordArray(buff: Uint8Array): WordArray {
+  return CryptoJS.lib.WordArray.create(buff);
 }
 
 function createUint8Array(base64str: string): Uint8Array {
@@ -26,14 +25,14 @@ function createUint8Array(base64str: string): Uint8Array {
   return bytes;
 }
 
-function sha1(buff: ArrayBuffer): Uint8Array {
-  const input = createArrayBuffer(buff);
+function sha1(buff: Uint8Array): Uint8Array {
+  const input = createWordArray(buff);
   const digest = CryptoJS.SHA1(input);
   return createUint8Array(digest.toString(CryptoJS.enc.Base64));
 }
-
-function hmac(key: ArrayBuffer, text: ArrayBuffer): Uint8Array {
-  const digest = CryptoJS.HmacSHA1(createArrayBuffer(key), createArrayBuffer(text));
+Uint8Array
+function hmac(key: Uint8Array, text: Uint8Array): Uint8Array {
+  const digest = CryptoJS.HmacSHA1(createWordArray(key), createWordArray(text));
   return createUint8Array(digest.toString(CryptoJS.enc.Base64));
 }
 
@@ -66,10 +65,10 @@ function hotp(key: Key, counter: number): string {
       }
       new DataView(buff2.buffer).setBigUint64(blockSize, BigInt(counter), false);
     }
-    buff2 = sha1(buff2);
-    const buff = new Uint8Array(buff1.byteLength + buff2.byteLength);
+    const buff3 = sha1(buff2);
+    const buff = new Uint8Array(buff1.byteLength + buff3.byteLength);
     buff.set(buff1, 0);
-    buff.set(buff2, buff1.byteLength);
+    buff.set(buff3, buff1.byteLength);
     let digest = sha1(buff);
 
     // Truncate

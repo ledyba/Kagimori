@@ -1,4 +1,3 @@
-import { browser } from 'webextension-polyfill-ts'
 import {Key} from './Key'
 import { loadKeys, clearKeys, saveKeys } from './Repo';
 import jsQR from "jsqr";
@@ -49,6 +48,7 @@ function showKeyList(newKeys: Key[]) {
       el.appendChild(container);
     }
     {
+      const thisKey = key;
       const removeButton = document.createElement('img');
       removeButton.classList.add('key-remove');
       removeButton.src = './remove_circle-black-48dp.svg';
@@ -56,9 +56,9 @@ function showKeyList(newKeys: Key[]) {
       el.appendChild(removeButton);
       removeButton.addEventListener('click', () => {
         async function handler() {
-          const idx = keys.indexOf(key);
-          if(idx >= 0 && confirm(`Really would like to remove key: "${key.issuer}/${key.label}"?`)) {
-            keys.splice(keys.indexOf(key), 1);
+          const idx = keys.indexOf(thisKey);
+          if(idx >= 0 && confirm(`Really would like to remove key: "${thisKey.issuer}/${thisKey.label}"?`)) {
+            keys.splice(keys.indexOf(thisKey), 1);
             await saveKeys(keys);
             showKeyList(keys);
           }

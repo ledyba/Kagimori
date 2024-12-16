@@ -68,7 +68,7 @@ async function setup() {
 }
 
 function openConfig() {
-  const url = browser.extension.getURL('static/config.html');
+  const url = browser.runtime.getURL('static/config.html');
   async function handler() {
     const tabs = await browser.tabs.query({currentWindow:true});
     for (let i=0; i < tabs.length; i++) {
