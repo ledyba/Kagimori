@@ -1,4 +1,4 @@
-import {browser} from 'webextension-polyfill-ts'
+import * as Browser from 'webextension-polyfill'
 import {Key, generateKey} from './Key'
 import {loadKeys} from './Repo'
 
@@ -68,16 +68,16 @@ async function setup() {
 }
 
 function openConfig() {
-  const url = browser.runtime.getURL('static/config.html');
+  const url = Browser.runtime.getURL('static/config.html');
   async function handler() {
-    const tabs = await browser.tabs.query({currentWindow:true});
+    const tabs = await Browser.tabs.query({currentWindow:true});
     for (let i=0; i < tabs.length; i++) {
       if (tabs[i].url === url) {
-        browser.tabs.update(tabs[i].id, {active:true});
-       return;
+        Browser.tabs.update(tabs[i].id, {active:true});
+       Browser;
       }
     }
-    await browser.tabs.create({url:url, active:true});
+    await Browser.tabs.create({url:url, active:true});
   }
   handler().catch(reportExecuteScriptError);
 }
